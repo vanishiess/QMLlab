@@ -10,6 +10,7 @@ ListView{
     ScrollBar.vertical: ScrollBar{}
     model:contactsModel
     delegate: VKconItem{
+        icon:picture
         text:name
         selected: list.currentIndex===index
         onLeftClick: {

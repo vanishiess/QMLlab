@@ -4,6 +4,7 @@ import QtQuick.Window 2.13
 import QtQuick.Controls 2.12
 
 Rectangle {
+
     id: me
     property alias icon: icon.source
     property alias text: label.text
@@ -16,10 +17,10 @@ Rectangle {
 
     color:{
         if(selected)
-            return "lightblue"
+            return "grey"
         if(area.containsMouse)
             return "grey"
-        return "white"
+        return "black"
     }
 
 
@@ -30,16 +31,22 @@ Rectangle {
         anchors.rightMargin: 4
         Image{
             id:icon
-            source: "icons/1.jpg"
+            source: "icons/image4.png"
             Layout.fillHeight: true
             Layout.preferredWidth: height
             Layout.margins: 7
         }
-        Label{
-            id: label
-            Layout.fillWidth: true
-            text: "test"
-            font.bold:true
+        ColumnLayout{
+            Label{
+                id: label
+                Layout.fillWidth: true
+                font.bold:true
+            }
+            Label{
+                id: label1
+                Layout.fillWidth: true
+                text: "УрФУ      написать сообщение"
+            }
         }
     }
     MouseArea{
