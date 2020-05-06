@@ -3,4 +3,4 @@
 Студента ФТ-280008
 
 
-![All Text] (/icons/screenshot.png?raw=true "Меню приложения")
+![Alt Text] (/icons/screenshot.png?raw=true "Меню приложения")
