@@ -5,6 +5,8 @@ import QtQuick.Controls 2.12
 
 ListView{
     id:list
+    signal menu()
+    property int menuIndex: null
     clip: true
     boundsBehavior: ListView.StopAtBounds
     ScrollBar.vertical: ScrollBar{}
@@ -15,6 +17,10 @@ ListView{
         selected: list.currentIndex===index
         onLeftClick: {
             list.currentIndex=index
+        }
+        onRightClick: {
+            menuIndex=index;
+            menu();
         }
     }
 }

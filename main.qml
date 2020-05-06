@@ -26,9 +26,6 @@ Window {
         }
     }
 
-    ContactList{
-        model:contactsModel
-    }
 
     ColumnLayout{
         Image{
@@ -43,9 +40,24 @@ Window {
             }
         }
         ContactList{
+            id: list
             Layout.fillHeight: true
             Layout.fillWidth: true
             model:contactsModel
+            onMenu: {
+                contactlistmenu.popup();
+            }
+        }
+    }
+
+    Menu{
+        id:contactlistmenu
+        modal: true
+        MenuItem{
+            text:"Удалить"
+            onTriggered: {
+                contactsModel.remove(list.menuIndex)
+            }
         }
     }
 
